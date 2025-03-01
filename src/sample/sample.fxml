@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<?import java.net.URL?>
+<AnchorPane
+
+    fx:controller="sample.Controller"
+    xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    prefHeight="790" prefWidth="540">
+
+    <stylesheets>
+        <URL value="@../styles/style.css"/>
+    </stylesheets>
+
+    <!--TitleBar-->
+    <GridPane fx:id="titleBar" onMousePressed="#handleTitleBarClickAction" onMouseDragged="#handleTitleBarMovementAction">
+        <!--Icon-->
+        <ImageView GridPane.columnIndex="0" fitWidth="30" fitHeight="30">
+            <image>
+                <Image url="@../resources/icon.png"/>
+            </image>
+        </ImageView>
+
+        <!--Title-->
+        <Label text="Number Guess Game (JavaFX)" GridPane.columnIndex="1"/>
+
+        <!--Minimize Button-->
+        <Button fx:id="minBtn" onAction="#handleMinimizeAction" text="-" GridPane.columnIndex="2"/>
+
+        <!--Exit Button-->
+        <Button fx:id="closeBtn" onAction="#handleCloseAction" text="X" GridPane.columnIndex="3"/>
+
+    </GridPane>
+
+    <!--Background-->
+    <ImageView fx:id="backgroundImg" AnchorPane.topAnchor="30" fitWidth="540" fitHeight="760">
+        <image>
+            <Image url="@../resources/background.png"/>
+        </image>
+    </ImageView>
+
+    <!--Menu-->
+    <GridPane fx:id="mainMenu" visible="true" AnchorPane.topAnchor="255" AnchorPane.leftAnchor="25">
+        <!--Menu Title-->
+        <Label fx:id="titleLabel" text="Number Guessing Game" GridPane.columnIndex="1" GridPane.rowIndex="1"
+               GridPane.halignment="CENTER">
+            <wrapText>
+                <Boolean fx:value="true"/>
+            </wrapText>
+        </Label>
+
+        <!--Start Button-->
+        <Button fx:id="startBtn" onAction="#handleStartAction" text="Start" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                GridPane.halignment="CENTER"/>
+
+        <!--Exit Button-->
+        <Button fx:id="exitBtn" onAction="#handleExitAction" text="Exit" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                GridPane.halignment="CENTER"/>
+    </GridPane>
+
+    <!--Game-->
+    <GridPane fx:id="gameDisplay" visible="false" AnchorPane.topAnchor="260" AnchorPane.leftAnchor="0">
+        <Label text="Guess the number or we'll destroy your planet!" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <wrapText>
+                <Boolean fx:value="true"/>
+            </wrapText>
+        </Label>
+
+        <!--Counter Label-->
+        <Label fx:id="chanceCounterLabel" text="Counter Placeholder" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <!--User Input Field-->
+        <TextField fx:id="userInputField" promptText="Enter Guess" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   GridPane.halignment="CENTER"/>
+
+        <!--Submit Button-->
+        <Button fx:id="submitBtn" onAction="#handleSubmitAction" text="Submit" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                GridPane.halignment="CENTER"/>
+
+        <!--Hint Label-->
+        <Label fx:id="hintLabel" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+
+    <!--Try Again Button-->
+    <Button fx:id="tryAgainBtn" onAction="#handleTryAgainAction" visible="false" text="Try Again?" AnchorPane.topAnchor="650" AnchorPane.leftAnchor="170"/>
+</AnchorPane>
