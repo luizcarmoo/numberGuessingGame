@@ -5,7 +5,7 @@
 The Number Guessing Game 👽🛸 is an interactive game where the player tries to guess a randomly generated secret number. With each attempt, the game provides feedback indicating whether the guess is too high or too low until the player either guesses correctly or runs out of attempts.
 
 <p align="center">
-    <img src="https://github.com/luizcarmoo/numberGuessingGame/blob/master/Number_Guessing_Game.png.png?raw=true" align="center"  width="450">
+    <img src="https://github.com/luizcarmoo/numberGuessingGame/blob/master/Number_Guessing_Game.png?raw=true" align="center"  width="450">
 </p>
 
 **Features**
